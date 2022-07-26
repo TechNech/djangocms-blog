@@ -2,7 +2,10 @@
 # djangocms-blog
 
 ## Issue 1: 
-   Blog content is not shown on the post page.
+   Blog content is not shown on the post page. (# Fixed)
+
+## Issue 2: 
+   Media content is not shown on the post page. (# Fixed)
 
 # Project Structure:
   ![project-structure](https://i.imgur.com/ChRHCti.png)
