@@ -1,5 +1,4 @@
-{% load cms_tags sekizai_tags %}
-
+{% extends CMS_TEMPLATE %}
 {% block meta %}
     {% comment %}
     This is needed if you can't add ``{% include "meta/meta.html" %}`` in the django CMS template attached to the blog
@@ -15,22 +14,9 @@
     {% endif %}
 {% endblock meta %}
 
-
-<html>
-  <head>
-    <title>{% page_attribute "page_title" %}</title>
-    {% render_block "css" %}
-  </head>
-  <body>
-
+{% block blog %}
     <div class="app app-blog">
-        {% cms_toolbar %}
-         {% render_placeholder content %} 
-         {% render_block "js" %}
-
         {% block content_blog %}{% endblock %}
     </div>
-  </body>
-</html>
-
+{% endblock %}
 

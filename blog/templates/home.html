@@ -1,1 +1,18 @@
-{% extends "/cms_blog/base.html" %} 
+{% load cms_tags sekizai_tags static %}
+<html>
+    <head>
+        <title>{% page_attribute "page_title" %}</title>
+        <link rel="stylesheet" href="{% static 'cms_blog/css/djangocms_blog.css' %}" type="text/css" media="screen">
+        <link rel="stylesheet" href="{% static 'cms_blog/css/djangocms_blog_admin.css' %}">
+        {% render_block "css" %}
+    </head>
+    <body>
+        {% cms_toolbar %}
+        {% placeholder "content" %}
+
+        {% block blog %}
+        {% endblock %}
+
+        {% render_block "js" %}
+    </body>
+</html>
