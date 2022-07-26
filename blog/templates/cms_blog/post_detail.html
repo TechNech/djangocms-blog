@@ -7,7 +7,7 @@
 {% block content_blog %}{% spaceless %}
 <article id="post-{{ post.slug }}" >
     <header>
-        <h2>{% render_model post "title" %}</h2>
+        <h2>{% render_model post "title" %} Hello</h2>
         {% if post.subtitle %}
             <h3>{% render_model post "subtitle" %}</h3>
         {% endif %}
@@ -25,10 +25,15 @@
     {% endif %}
     {% endspaceless %}
     {% if post.app_config.use_placeholder %}
-        <div class="blog-content">{% render_placeholder post.content %}</div>
-    {% else %}
-        <div class="blog-content">{% render_model post "post_text" "post_text" "" "safe" %}</div>
-    {% endif %}
+    <div class="blog-content">hey1
+        {% render_model post "abstract" "content" "post_text" "safe" %}
+       
+    </div>
+{% else %}
+    <div class="blog-content">hey{% render_model post "post_text" "post_text" "" "safe" %}</div>
+{% endif %}
+
+    
     {% if view.liveblog_enabled %}
         {% include "liveblog/includes/post_detail.html" %}
     {% endif %}

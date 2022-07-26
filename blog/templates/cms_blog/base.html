@@ -1,4 +1,4 @@
-{% extends CMS_TEMPLATE %}
+{% load cms_tags sekizai_tags %}
 
 {% block meta %}
     {% comment %}
@@ -15,8 +15,22 @@
     {% endif %}
 {% endblock meta %}
 
-{% block content %}
-<div class="app app-blog">
-    {% block content_blog %}{% endblock %}
-</div>
-{% endblock content %}
+
+<html>
+  <head>
+    <title>{% page_attribute "page_title" %}</title>
+    {% render_block "css" %}
+  </head>
+  <body>
+
+    <div class="app app-blog">
+        {% cms_toolbar %}
+         {% render_placeholder content %} 
+         {% render_block "js" %}
+
+        {% block content_blog %}{% endblock %}
+    </div>
+  </body>
+</html>
+
+
