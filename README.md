@@ -16,12 +16,13 @@
   ### Initialise the virtualenv      
         virtualenv venv
   ### Activate the virtualenv
-      source venv/bin/activate
-  
+        source venv/bin/activate
+  ### Install dependencies
+        pip install -r requirements.txt  
   ### CD to blog directory having manage.py
-      cd blog
-
+        cd blog
   ### Make migrations
-      python manage.py migrate
+        python manage.py makemigrations  
+        python manage.py migrate
   ### Run server
-      python manage.py runserver
+        python manage.py runserver
