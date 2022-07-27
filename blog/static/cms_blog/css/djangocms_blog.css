@@ -1,9 +1,35 @@
-.app {
-  background-color: cyan;
-  display: flex;
-  flex-wrap: wrap;
+body {
+  background-color: lightgrey;
 }
 
-section .blog-list {
+img {
+  max-width: 100%;
+}
+
+.app-blog article {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  width: 80%;
+  text-align: justify;
+  padding: 2rem;
+  margin: auto;
+}
+
+section.blog-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  place-items: center;
+  row-gap: 15px;
+}
+
+article.post-item {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+
+.blog-lead {
+  grid-area: 2 / 1 / 3 / 3;
 }
