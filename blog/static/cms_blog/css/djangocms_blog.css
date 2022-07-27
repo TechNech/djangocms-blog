@@ -1,3 +1,9 @@
 .app {
   background-color: cyan;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+section .blog-list {
+  display: flex;
 }
